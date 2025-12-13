@@ -1,0 +1,32 @@
+.page{
+    max-width: 800px;
+    margin: 0 auto
+}
+body{
+    background-color:antiquewhite;    
+    
+}
+#Introduction{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: medium;
+}
+
+.pfp {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;    
+
+}
+
+h2{
+    text-align: left;
+}
+
+.DocFlow{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
