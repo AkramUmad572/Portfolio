@@ -12,7 +12,13 @@ body{
     flex-direction: column;
     font-size: medium;
 }
+#intro-actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
 
+}
 .pfp {
     display: flex;
     width: 150px;
@@ -25,8 +31,75 @@ h2{
     text-align: left;
 }
 
+.Email{
+    position: relative;
+    cursor: pointer;
+
+}
+.copied{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(33, 32, 32, 0.884);
+    color: rgb(255, 255, 255);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font: 12px;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+}
+.Resume{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 5px 15px;
+    border: 1px solid #000;
+    border-radius: 8px;
+
+    text-decoration: none;
+    color: #000;
+    background: transparent;
+    font-weight: 800;
+    cursor: pointer;
+    
+
+}
+.social {
+  transition: transform 0.15s ease;
+}
+
+
+.social:hover {
+    transform: scale(1.2);
+}
+
+.linkedin{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    background: transparent;
+    font-weight: 800;
+    cursor: pointer;
+
+}
+.GitHub{
+    display: inline-flex;
+    text-decoration: none;
+    color: #000;
+    background: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
 .DocFlow{
     width: 200px;
     height: 200px;
+    text-align: center;
+}
+footer{
     text-align: center;
 }
