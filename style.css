@@ -11,6 +11,7 @@ body{
     justify-content: center;
     flex-direction: column;
     font-size: medium;
+    align-items: center;
 }
 #intro-actions{
     display: flex;
@@ -102,4 +103,67 @@ h2{
 }
 footer{
     text-align: center;
+}
+
+#Experience{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    position: relative;
+} 
+
+#Experience::before{
+    content: "";
+    position: relative;
+    
+    left: 100px;
+    top: 55px;
+    bottom: 55px;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+
+.cibc{
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    background-color: rgba(0,0,0,0.04);
+    margin-top: 2px;
+}
+.Experience-content{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.Experience-Row{
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    position: relative;
+}
+.Experience-date{
+    font-size: 13px;
+    color: #777;
+    
+}
+
+#Experience ul{
+    margin-top: 4px;
+    padding-left: 20px;
+}
+
+#Experience li{
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.Experience-date,
+.Experience-title {
+    margin: 0;
+}
+.Experience-title{
+    margin-bottom: 2px;
 }
