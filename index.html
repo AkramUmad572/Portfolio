@@ -303,6 +303,32 @@
       <footer>
         <div class="footer-content">
           <p class="footer-text">© 2026 Umad Akram</p>
+          
+          <!-- OTU Webring Widget - Center -->
+          <div id="otu-webring" style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+            <a
+              id="webring-prev"
+              href="#"
+              class="webring-nav"
+              title="Previous site"
+            >
+              ←
+            </a>
+            
+            <a href="https://otu-ring.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; border: none;">
+              <img src="https://otu-ring.com/assets/ontariotech.svg" alt="OTU Webring" class="otu-logo" style="height: 20px; width: auto; transition: opacity 0.2s ease;" />
+            </a>
+
+            <a
+              id="webring-next"
+              href="#"
+              class="webring-nav"
+              title="Next site"
+            >
+              →
+            </a>
+          </div>
+          
           <div class="footer-links">
             <a href="https://github.com/AkramUmad572" target="_blank" class="footer-social" aria-label="GitHub">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -335,5 +361,26 @@
         </div>
       </footer>
     </body>
+    <script>
+      (function() {
+        // Get current site hostname and remove www. prefix
+        let hostname = window.location.hostname;
+        if (hostname.startsWith('www.')) {
+          hostname = hostname.substring(4);
+        }
+        
+        // Set up navigation links
+        const prevLink = document.getElementById('webring-prev');
+        const nextLink = document.getElementById('webring-next');
+        
+        if (prevLink) {
+          prevLink.href = 'https://otu-ring.com/prev.html?from=' + encodeURIComponent(hostname);
+        }
+        
+        if (nextLink) {
+          nextLink.href = 'https://otu-ring.com/next.html?from=' + encodeURIComponent(hostname);
+        }
+      })();
+    </script>
   </div>
 </html>
