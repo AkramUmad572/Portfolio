@@ -1,271 +1,463 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Music | Umad Akram</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music | Umad Akram</title>
 
-      <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="music-style.css" />
-      <script src="app.js" defer></script>
-    </head>
-    <body>
-      <div class="page music-page">
-        <header>
-          <div class="header-left">
-            <a href="index.html" class="nav-link" id="back-nav-link">← Back to Home</a>
-          </div>
-          <div class="header-right">
-            <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-              <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-              </svg>
-              <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-              </svg>
-            </button>
-          </div>
-        </header>
-
-        <h1 class="page-title">music</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 30px;">
-          Album reviews and what I'm currently listening to
-        </p>
-        
-        <!-- Spotify Profile Link -->
-        <div style="text-align: center; margin-bottom: 60px;">
-          <a href="https://open.spotify.com/user/hi00zfbir1vqrboomuqf4umi1?si=53d27e3988434265" target="_blank" class="spotify-profile-link">
-            <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="margin-right: 8px;">
-              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="music-style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page music-page">
+      <header>
+        <div class="header-left">
+          <a href="index.html" class="nav-link" id="back-nav-link"
+            >← Back to Home</a
+          >
+        </div>
+        <div class="header-right">
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            onclick="toggleTheme()"
+            aria-label="Toggle dark mode"
+          >
+            <svg
+              class="sun-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="5" />
+              <line x1="12" y1="1" x2="12" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="23" />
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+              <line x1="1" y1="12" x2="3" y2="12" />
+              <line x1="21" y1="12" x2="23" y2="12" />
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
             </svg>
-            Follow me on Spotify
-          </a>
+            <svg
+              class="moon-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
         </div>
+      </header>
 
-        <!-- Favorite Artists -->
-        <section style="margin-bottom: 60px; padding: 0 20px;">
-          <h2 style="font-size: 1.3rem; margin-bottom: 24px; text-align: center;">2025 Spotify Wrapped</h2>
-          <div class="favorite-artists">
-            <div class="artist-item">
-              <div class="artist-image-container">
-                <img src="music/carti.jpg" alt="PlayBoi Carti" class="artist-image" />
-              </div>
-              <div class="artist-name">Playboi Carti</div>
-            </div>
-            <div class="artist-item">
-              <div class="artist-image-container">
-                <img src="music/weekend.jpg" alt="The Weeknd" class="artist-image" />
-              </div>
-              <div class="artist-name">The Weekend</div>
-            </div>
-            <div class="artist-item">
-              <div class="artist-image-container">
-                <img src="music/bryson.jpg" alt="Bryson Tiller" class="artist-image" />
-              </div>
-              <div class="artist-name">Bryson Tiller</div>
-            </div>
-            <div class="artist-item">
-              <div class="artist-image-container">
-                <img src="music/ken.jpg" alt="Ken Carson" class="artist-image" />
-              </div>
-              <div class="artist-name">Ken Carson</div>
-            </div>
-            <div class="artist-item">
-              <div class="artist-image-container">
-                <img src="music/njz.jpg" alt="NewJeans" class="artist-image" />
-              </div>
-              <div class="artist-name">New Jeans</div>
-            </div>
-          </div>
-        </section>
+      <h1 class="page-title">music</h1>
+      <p style="text-align: center; color: #666; margin-bottom: 30px">
+        Album reviews and what I'm currently listening to
+      </p>
 
-        <section style="margin-bottom: 60px;">
-          <h2 style="font-size: 1.3rem; margin-bottom: 24px;">Album Reviews</h2>
-          <div class="albums-grid">
-            
-            <!-- ASAP Rocky - Don't Be Dumb Album Card -->
-            <div class="album-card" onclick="openAlbumModal('dont-be-dumb')">
-              <div class="album-cover-container">
-                <img src="music/dont_be_dum.png" alt="Don't Be Dumb album cover" class="album-cover" />
-                <div class="album-rating-badge">8/10</div>
-              </div>
-              <div class="album-info">
-                <h3 class="album-artist">A$AP Rocky</h3>
-                <p class="album-title">Don't Be Dumb</p>
-              </div>
-            </div>
-
-            <!-- PlayBoi Carti - I AM MUSIC Album Card -->
-            <div class="album-card" onclick="openAlbumModal('i-am-music')">
-              <div class="album-cover-container">
-                <img src="music/I_AM_MUSIC.jpg" alt="I AM MUSIC album cover" class="album-cover" />
-                <div class="album-rating-badge">9.5/10</div>
-              </div>
-              <div class="album-info">
-                <h3 class="album-artist">PlayBoi Carti</h3>
-                <p class="album-title">I AM MUSIC</p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Album Modal -->
-        <div id="album-modal" class="modal" onclick="closeModal(event)">
-          <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            
-            <!-- Don't Be Dumb Modal Content -->
-            <div id="dont-be-dumb-content" class="album-modal-content">
-              <div class="modal-left">
-                <h2 class="modal-artist">A$AP Rocky</h2>
-                <h3 class="modal-album-title">Don't Be Dumb</h3>
-                <div class="modal-rating">
-                  <span class="rating-number">8</span>
-                  <span class="rating-divider">/</span>
-                  <span class="rating-total">10</span>
-                </div>
-                <p class="modal-description">
-                  I personally never listend to Rocky like that, but this album was pretty solid. 5-6 years of waiting good? maybe not, but 
-                  regardless I really enjoyed it. The beat on helicopter was insane, also I been waiting for STOLE YA FLOW to be released for a while.
-                  Solid album, would relisten agian maybe i'll rank it higher we'll see.
-                </p>
-                <div class="modal-favorite-songs">
-                  <h4>Top 3 Tracks:</h4>
-                  <ol>
-                    <li>HELICOPTER</li>
-                    <li>STOLE YA FLOW</li>
-                    <li>STOP SNITCHING</li>
-                  </ol>
-                </div>
-              </div>
-              <div class="modal-right">
-                <img src="music/dont_be_dum.png" alt="Don't Be Dumb album cover" class="modal-album-cover" />
-              </div>
-            </div>
-
-            <!-- I AM MUSIC Modal Content -->
-            <div id="i-am-music-content" class="album-modal-content">
-              <div class="modal-left">
-                <h2 class="modal-artist">PlayBoi Carti</h2>
-                <h3 class="modal-album-title">I AM MUSIC</h3>
-                <div class="modal-rating">
-                  <span class="rating-number">9.5</span>
-                  <span class="rating-divider">/</span>
-                  <span class="rating-total">10</span>
-                </div>
-                <p class="modal-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                </p>
-                <div class="modal-favorite-songs">
-                  <h4>Top 3 Tracks:</h4>
-                  <ol>
-                    <li>Crank</li>
-                    <li>FINE SHIT</li>
-                    <li>FOMDJ</li>
-                  </ol>
-                </div>
-              </div>
-              <div class="modal-right">
-                <img src="music/I_AM_MUSIC.jpg" alt="I AM MUSIC album cover" class="modal-album-cover" />
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <footer>
-          <div class="footer-content">
-            <p class="footer-text">© 2026 Umad Akram</p>
-            <div class="footer-links">
-              <a href="https://github.com/AkramUmad572" target="_blank" class="footer-social" aria-label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                  <path d="M9 18c-4.51 2-5-2-7-2"/>
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/umad-akram-143573291/" target="_blank" class="footer-social" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                  <rect width="4" height="12" x="2" y="9"/>
-                  <circle cx="4" cy="4" r="2"/>
-                </svg>
-              </a>
-              <a href="https://x.com/umad_akram" target="_blank" class="footer-social" aria-label="X/Twitter">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4l11.733 16h4.267l-11.733-16z"/>
-                  <path d="M4 20l6.768-6.768m2.46-2.46L20 4"/>
-                </svg>
-              </a>
-              <button class="footer-email" onclick="copyemail()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-                akramumad@gmail.com
-                <span class="copied">Copied!</span>
-              </button>
-            </div>
-          </div>
-        </footer>
+      <!-- Spotify Profile Link -->
+      <div style="text-align: center; margin-bottom: 60px">
+        <a
+          href="https://open.spotify.com/user/hi00zfbir1vqrboomuqf4umi1?si=53d27e3988434265"
+          target="_blank"
+          class="spotify-profile-link"
+        >
+          <svg
+            class="spotify-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            style="margin-right: 8px"
+          >
+            <path
+              d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"
+            />
+          </svg>
+          Follow me on Spotify
+        </a>
       </div>
 
-      <script>
-        function openAlbumModal(albumId) {
-          const modal = document.getElementById('album-modal');
-          const content = document.getElementById(albumId + '-content');
-          const backNav = document.getElementById('back-nav-link');
-          
-          // Hide all album contents
-          const allContents = document.querySelectorAll('.album-modal-content');
-          allContents.forEach(c => c.style.display = 'none');
-          
-          // Show selected album content
-          if (content) {
-            content.style.display = 'flex';
-          }
-          
-          // Update navigation to "Back to Albums"
-          backNav.textContent = '← Back to Albums';
-          backNav.href = '#';
-          backNav.onclick = function(e) {
-            e.preventDefault();
-            closeModal();
-          };
-          
-          modal.style.display = 'flex';
-          document.body.style.overflow = 'hidden';
+      <!-- Favorite Artists -->
+      <section style="margin-bottom: 60px; padding: 0 20px">
+        <h2 style="font-size: 1.3rem; margin-bottom: 24px; text-align: center">
+          2025 Spotify Wrapped
+        </h2>
+        <div class="favorite-artists">
+          <div class="artist-item">
+            <div class="artist-image-container">
+              <img
+                src="Images/music/carti.jpg"
+                alt="PlayBoi Carti"
+                class="artist-image"
+              />
+            </div>
+            <div class="artist-name">Playboi Carti</div>
+          </div>
+          <div class="artist-item">
+            <div class="artist-image-container">
+              <img
+                src="Images/music/weekend.jpg"
+                alt="The Weeknd"
+                class="artist-image"
+              />
+            </div>
+            <div class="artist-name">The Weekend</div>
+          </div>
+          <div class="artist-item">
+            <div class="artist-image-container">
+              <img
+                src="Images/music/bryson.jpg"
+                alt="Bryson Tiller"
+                class="artist-image"
+              />
+            </div>
+            <div class="artist-name">Bryson Tiller</div>
+          </div>
+          <div class="artist-item">
+            <div class="artist-image-container">
+              <img
+                src="Images/music/ken.jpg"
+                alt="Ken Carson"
+                class="artist-image"
+              />
+            </div>
+            <div class="artist-name">Ken Carson</div>
+          </div>
+          <div class="artist-item">
+            <div class="artist-image-container">
+              <img
+                src="Images/music/njz.jpg"
+                alt="NewJeans"
+                class="artist-image"
+              />
+            </div>
+            <div class="artist-name">New Jeans</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-bottom: 60px">
+        <h2 style="font-size: 1.3rem; margin-bottom: 24px">Album Reviews</h2>
+        <div class="albums-grid">
+          <!-- ASAP Rocky - Don't Be Dumb Album Card -->
+          <div class="album-card" onclick="openAlbumModal('dont-be-dumb')">
+            <div class="album-cover-container">
+              <img
+                src="Images/music/dont_be_dum.png"
+                alt="Don't Be Dumb album cover"
+                class="album-cover"
+              />
+              <div class="album-rating-badge">8/10</div>
+            </div>
+            <div class="album-info">
+              <h3 class="album-artist">A$AP Rocky</h3>
+              <p class="album-title">Don't Be Dumb</p>
+            </div>
+          </div>
+
+          <!-- PlayBoi Carti - I AM MUSIC Album Card -->
+          <div class="album-card" onclick="openAlbumModal('i-am-music')">
+            <div class="album-cover-container">
+              <img
+                src="Images/music/I_AM_MUSIC.jpg"
+                alt="I AM MUSIC album cover"
+                class="album-cover"
+              />
+              <div class="album-rating-badge">9.5/10</div>
+            </div>
+            <div class="album-info">
+              <h3 class="album-artist">PlayBoi Carti</h3>
+              <p class="album-title">I AM MUSIC</p>
+            </div>
+          </div>
+
+          <!-- wave to earth - 0.1 flaws and all Album Card -->
+          <div class="album-card" onclick="openAlbumModal('wave-to-earth')">
+            <div class="album-cover-container">
+              <img
+                src="Images/music/wte.jpg"
+                alt="0.1 flaws and all album cover"
+                class="album-cover"
+              />
+              <div class="album-rating-badge">9/10</div>
+            </div>
+            <div class="album-info">
+              <h3 class="album-artist">wave to earth</h3>
+              <p class="album-title">0.1 flaws and all</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Album Modal -->
+      <div id="album-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+
+          <!-- Don't Be Dumb Modal Content -->
+          <div id="dont-be-dumb-content" class="album-modal-content">
+            <div class="modal-left">
+              <h2 class="modal-artist">A$AP Rocky</h2>
+              <h3 class="modal-album-title">Don't Be Dumb</h3>
+              <div class="modal-rating">
+                <span class="rating-number">8</span>
+                <span class="rating-divider">/</span>
+                <span class="rating-total">10</span>
+              </div>
+              <p class="modal-description">
+                I personally never listend to Rocky like that, but this album
+                was pretty solid. 5-6 years of waiting good? maybe not, but
+                regardless I really enjoyed it. The beat on helicopter was
+                insane, also I been waiting for STOLE YA FLOW to be released for
+                a while. Solid album, would relisten agian maybe i'll rank it
+                higher we'll see.
+              </p>
+              <div class="modal-favorite-songs">
+                <h4>Top 3 Tracks:</h4>
+                <ol>
+                  <li>HELICOPTER</li>
+                  <li>STOLE YA FLOW</li>
+                  <li>STOP SNITCHING</li>
+                </ol>
+              </div>
+            </div>
+            <div class="modal-right">
+              <img
+                src="Images/music/dont_be_dum.png"
+                alt="Don't Be Dumb album cover"
+                class="modal-album-cover"
+              />
+            </div>
+          </div>
+
+          <!-- I AM MUSIC Modal Content -->
+          <div id="i-am-music-content" class="album-modal-content">
+            <div class="modal-left">
+              <h2 class="modal-artist">PlayBoi Carti</h2>
+              <h3 class="modal-album-title">I AM MUSIC</h3>
+              <div class="modal-rating">
+                <span class="rating-number">9.5</span>
+                <span class="rating-divider">/</span>
+                <span class="rating-total">10</span>
+              </div>
+              <p class="modal-description">
+                Absolute perfection, worth the 5 years of waiting. Opium king
+                done it again.
+              </p>
+              <div class="modal-favorite-songs">
+                <h4>Top 3 Tracks:</h4>
+                <ol>
+                  <li>Crank</li>
+                  <li>FINE SHIT</li>
+                  <li>FOMDJ</li>
+                </ol>
+              </div>
+            </div>
+            <div class="modal-right">
+              <img
+                src="Images/music/I_AM_MUSIC.jpg"
+                alt="I AM MUSIC album cover"
+                class="modal-album-cover"
+              />
+            </div>
+          </div>
+
+          <!-- wave to earth - 0.1 flaws and all Modal Content -->
+          <div id="wave-to-earth-content" class="album-modal-content">
+            <div class="modal-left">
+              <h2 class="modal-artist">wave to earth</h2>
+              <h3 class="modal-album-title">0.1 flaws and all</h3>
+              <div class="modal-rating">
+                <span class="rating-number">8.5</span>
+                <span class="rating-divider">/</span>
+                <span class="rating-total">10</span>
+              </div>
+              <p class="modal-description">
+                First indie rock album, I listend to. Really good album, amazing
+                for studying and chilling. Gonna listen to more wave to earth.
+              </p>
+              <div class="modal-favorite-songs">
+                <h4>Top 3 Tracks:</h4>
+                <ol>
+                  <li>homesick</li>
+                  <li>bad</li>
+                  <li>love</li>
+                </ol>
+              </div>
+            </div>
+            <div class="modal-right">
+              <img
+                src="Images/music/wave_to_earth.jpg"
+                alt="0.1 flaws and all album cover"
+                class="modal-album-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <p class="footer-text">© 2026 Umad Akram</p>
+          <div class="footer-links">
+            <a
+              href="https://github.com/AkramUmad572"
+              target="_blank"
+              class="footer-social"
+              aria-label="GitHub"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/umad-akram-143573291/"
+              target="_blank"
+              class="footer-social"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/umad_akram"
+              target="_blank"
+              class="footer-social"
+              aria-label="X/Twitter"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 4l11.733 16h4.267l-11.733-16z" />
+                <path d="M4 20l6.768-6.768m2.46-2.46L20 4" />
+              </svg>
+            </a>
+            <button class="footer-email" onclick="copyemail()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              akramumad@gmail.com
+              <span class="copied">Copied!</span>
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      function openAlbumModal(albumId) {
+        const modal = document.getElementById("album-modal");
+        const content = document.getElementById(albumId + "-content");
+        const backNav = document.getElementById("back-nav-link");
+
+        // Hide all album contents
+        const allContents = document.querySelectorAll(".album-modal-content");
+        allContents.forEach((c) => (c.style.display = "none"));
+
+        // Show selected album content
+        if (content) {
+          content.style.display = "flex";
         }
 
-        function closeModal(event) {
-          if (!event || event.target.classList.contains('modal') || event.target.classList.contains('modal-close')) {
-            const modal = document.getElementById('album-modal');
-            const backNav = document.getElementById('back-nav-link');
-            
-            // Reset navigation to "Back to Home"
-            backNav.textContent = '← Back to Home';
-            backNav.href = 'index.html';
-            backNav.onclick = null;
-            
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-          }
-        }
+        // Update navigation to "Back to Albums"
+        backNav.textContent = "← Back to Albums";
+        backNav.href = "#";
+        backNav.onclick = function (e) {
+          e.preventDefault();
+          closeModal();
+        };
 
-        // Close modal on ESC key
-        document.addEventListener('keydown', function(event) {
-          if (event.key === 'Escape') {
-            closeModal();
-          }
-        });
-      </script>
-    </body>
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(event) {
+        if (
+          !event ||
+          event.target.classList.contains("modal") ||
+          event.target.classList.contains("modal-close")
+        ) {
+          const modal = document.getElementById("album-modal");
+          const backNav = document.getElementById("back-nav-link");
+
+          // Reset navigation to "Back to Home"
+          backNav.textContent = "← Back to Home";
+          backNav.href = "index.html";
+          backNav.onclick = null;
+
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+      }
+
+      // Close modal on ESC key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
 </html>
