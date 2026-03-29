@@ -1,0 +1,90 @@
+/* Floating sakura layer — behind all UI (z-index), pointer-events none */
+
+#sakura-layer {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    contain: strict;
+}
+
+/* Main content stacks above the sakura layer */
+body > :not(#sakura-layer) {
+    position: relative;
+    z-index: 1;
+}
+
+.sakura-petal {
+    position: absolute;
+    top: 0;
+    color: rgba(178, 82, 118, 0.52);
+    filter: blur(0.35px);
+    will-change: transform, opacity;
+    animation-name: sakura-path;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: var(--dur, 22s);
+    animation-delay: var(--delay, 0s);
+}
+
+.sakura-petal svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+body[data-theme="dark"] .sakura-petal {
+    color: rgba(200, 110, 145, 0.4);
+    filter: blur(0.45px);
+}
+
+@keyframes sakura-path {
+    0% {
+        transform: translate3d(var(--x0, 0px), -12vh, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: var(--op, 0.4);
+    }
+
+    22% {
+        transform: translate3d(var(--x1, 0px), 18vh, 0) rotate(calc(var(--spin, 1turn) * 0.22));
+    }
+
+    45% {
+        transform: translate3d(var(--x2, 0px), 45vh, 0) rotate(calc(var(--spin, 1turn) * 0.45));
+    }
+
+    68% {
+        transform: translate3d(var(--x3, 0px), 72vh, 0) rotate(calc(var(--spin, 1turn) * 0.68));
+    }
+
+    92% {
+        opacity: var(--op, 0.4);
+    }
+
+    100% {
+        transform: translate3d(var(--x4, 0px), 118vh, 0) rotate(var(--spin, 1turn));
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    #sakura-layer,
+    #sakura-layer .sakura-petal {
+        animation: none !important;
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .sakura-petal {
+        filter: blur(0.25px);
+    }
+}
