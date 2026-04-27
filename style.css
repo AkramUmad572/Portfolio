@@ -565,6 +565,16 @@ body[data-theme="dark"] .footer-email:hover {
     margin-bottom: 0;
 }
 
+/* Flex: let the text column use full width in each row */
+#Experience .Experience-content {
+    min-width: 0;
+}
+
+/* Slightly smaller bios so short lines (e.g. Shopify) fit in the narrower experience column without changing the education column */
+#Experience .Experience-description {
+    font-size: 0.875rem;
+}
+
 .company-logo-container {
     position: relative;
     z-index: 2;
