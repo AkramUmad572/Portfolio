@@ -40,7 +40,73 @@ function toggleTheme() {
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.body.setAttribute('data-theme', savedTheme);
+
+  setupExperienceModal();
 });
+
+function setupExperienceModal() {
+  const modal = document.getElementById('experience-modal');
+  if (!modal) return;
+
+  const contentHost = modal.querySelector('[data-experience-modal-content]');
+  const closeBtn = modal.querySelector('[data-experience-modal-close]');
+  const clickableRows = document.querySelectorAll('.experience-clickable[data-experience-detail-id]');
+
+  let lastFocused = null;
+
+  const openModalWithDetailId = (detailId) => {
+    const detailEl = document.getElementById(detailId);
+    if (!detailEl || !contentHost) return;
+
+    lastFocused = document.activeElement;
+
+    contentHost.innerHTML = detailEl.innerHTML;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('experience-modal-open');
+
+    if (closeBtn) closeBtn.focus();
+  };
+
+  const closeModal = () => {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('experience-modal-open');
+    if (contentHost) contentHost.innerHTML = '';
+
+    if (lastFocused && typeof lastFocused.focus === 'function') {
+      lastFocused.focus();
+    }
+    lastFocused = null;
+  };
+
+  clickableRows.forEach((row) => {
+    row.addEventListener('click', () => {
+      const detailId = row.getAttribute('data-experience-detail-id');
+      if (detailId) openModalWithDetailId(detailId);
+    });
+
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const detailId = row.getAttribute('data-experience-detail-id');
+        if (detailId) openModalWithDetailId(detailId);
+      }
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    const isOpen = modal.getAttribute('aria-hidden') === 'false';
+    if (!isOpen) return;
+    if (e.key === 'Escape') closeModal();
+  });
+}
 
 // Dropdown toggle function
 function toggleDropdown(id) {

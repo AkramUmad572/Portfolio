@@ -235,6 +235,19 @@ body[data-theme="dark"] .moon-icon {
     display: block;
 }
 
+/* Visually hidden (screen-reader only) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Hero Section */
 .hero-section {
     margin-bottom: 60px;
@@ -556,6 +569,31 @@ body[data-theme="dark"] .footer-email:hover {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+.experience-clickable {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 12px;
+    margin-left: -12px;
+    margin-right: -12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.experience-clickable:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+body[data-theme="dark"] .experience-clickable:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.experience-clickable:focus-visible {
+    outline: 2px solid rgba(102, 126, 234, 0.7);
+    outline-offset: 2px;
+}
+
 .Experience-Row:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -576,6 +614,123 @@ body[data-theme="dark"] .footer-email:hover {
 /* Slightly smaller bios so short lines (e.g. Shopify) fit in the narrower experience column without changing the education column */
 #Experience .Experience-description {
     font-size: 0.875rem;
+}
+
+/* Experience Modal */
+.experience-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 40px 20px;
+}
+
+.experience-modal[aria-hidden="false"] {
+    display: block;
+}
+
+.experience-modal-content {
+    max-width: 760px;
+    margin: 40px auto;
+    background-color: #fcfbfa;
+    border-radius: 12px;
+    padding: 36px 32px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+body[data-theme="dark"] .experience-modal-content {
+    background-color: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+.experience-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #666;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.experience-modal-close:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+body[data-theme="dark"] .experience-modal-close {
+    color: #b0b0b0;
+}
+
+body[data-theme="dark"] .experience-modal-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.experience-modal-title {
+    margin: 0 0 6px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+
+body[data-theme="dark"] .experience-modal-title {
+    color: #f0f0f0;
+}
+
+.experience-modal-subtitle {
+    margin: 0 0 18px 0;
+    color: #777;
+    font-weight: 500;
+}
+
+body[data-theme="dark"] .experience-modal-subtitle {
+    color: #999;
+}
+
+.experience-modal-body {
+    color: #444;
+    line-height: 1.7;
+}
+
+body[data-theme="dark"] .experience-modal-body {
+    color: #d0d0d0;
+}
+
+.experience-modal-body ul {
+    margin: 14px 0 0 0;
+    padding-left: 22px;
+}
+
+.experience-modal-body li {
+    margin: 8px 0;
+}
+
+body.experience-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .experience-modal-content {
+        margin: 20px auto;
+        padding: 24px 20px;
+    }
 }
 
 .company-logo-container {

@@ -185,7 +185,14 @@
         <section id="Experience">
           <h2 class="section-title">experience</h2>
           <div class="experience-block">
-            <div class="Experience-Row">
+            <div
+              class="Experience-Row experience-clickable"
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+              aria-controls="experience-modal"
+              data-experience-detail-id="experience-detail-shopify"
+            >
               <div class="company-logo-container">
                 <img
                   class="company-logo"
@@ -198,11 +205,18 @@
                 <h3 class="Experience-title">Shopify</h3>
                 <p class="Experience-role">Software Engineering Intern</p>
                 <p class="Experience-description">
-                  Money Movement & Expansion.
+                  Installments infra for Shop Pay.
                 </p>
               </div>
             </div>
-            <div class="Experience-Row">
+            <div
+              class="Experience-Row experience-clickable"
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+              aria-controls="experience-modal"
+              data-experience-detail-id="experience-detail-creation"
+            >
               <div class="company-logo-container">
                 <img
                   class="company-logo"
@@ -219,7 +233,14 @@
                 </p>
               </div>
             </div>
-            <div class="Experience-Row">
+            <div
+              class="Experience-Row experience-clickable"
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+              aria-controls="experience-modal"
+              data-experience-detail-id="experience-detail-cibc"
+            >
               <div class="company-logo-container">
                 <img
                   class="company-logo"
@@ -234,8 +255,98 @@
                 <p class="Experience-description">Cloud networking + Infra.</p>
               </div>
             </div>
+
+            <!-- Experience details (shown in modal) -->
+            <div
+              id="experience-detail-shopify"
+              class="experience-detail"
+              hidden
+            >
+              <h3 class="experience-modal-title">Shopify</h3>
+              <p class="experience-modal-subtitle">
+                Software Engineering Intern · Money Movement & Expansion
+              </p>
+              <div class="experience-modal-body">
+                <p>
+                  Add your longer write-up here: what you worked on, impact,
+                  tech stack, and any fun problems.
+                </p>
+                <ul>
+                  <li>Example: Built/owned ...</li>
+                  <li>Example: Improved ... by ...</li>
+                  <li>Example: Learned ...</li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              id="experience-detail-creation"
+              class="experience-detail"
+              hidden
+            >
+              <h3 class="experience-modal-title">Creation</h3>
+              <p class="experience-modal-subtitle">
+                Founder · Automating design pipeline for manufacturing
+              </p>
+              <div class="experience-modal-body">
+                <p>
+                  Add your longer write-up here: what you’re building, your
+                  role, traction, and what you shipped.
+                </p>
+                <ul>
+                  <li>Example: Designed ...</li>
+                  <li>Example: Implemented ...</li>
+                  <li>Example: Validated ...</li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="experience-detail-cibc" class="experience-detail" hidden>
+              <h3 class="experience-modal-title">CIBC</h3>
+              <p class="experience-modal-subtitle">
+                Software Engineering Intern · Cloud networking + Infra
+              </p>
+              <div class="experience-modal-body">
+                <p>
+                  Add your longer write-up here: projects, scale, tooling, and
+                  outcomes.
+                </p>
+                <ul>
+                  <li>Example: Migrated ...</li>
+                  <li>Example: Automated ...</li>
+                  <li>Example: Partnered with ...</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
+
+        <!-- Experience Modal -->
+        <div
+          id="experience-modal"
+          class="experience-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="experience-modal-heading"
+          aria-hidden="true"
+        >
+          <div class="experience-modal-content" role="document">
+            <button
+              class="experience-modal-close"
+              type="button"
+              aria-label="Close experience details"
+              data-experience-modal-close
+            >
+              ×
+            </button>
+            <div id="experience-modal-heading" class="sr-only">
+              Experience details
+            </div>
+            <div class="experience-modal-dynamic" data-experience-modal-content>
+              <!-- content injected by app.js -->
+            </div>
+          </div>
+        </div>
 
         <section id="Education">
           <h2 class="section-title">education</h2>
