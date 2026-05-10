@@ -600,6 +600,13 @@ body[data-theme="dark"] .experience-clickable:hover {
     border-bottom: none;
 }
 
+/* Modal detail nodes follow the rows in #Experience, so the last row is never :last-child */
+#Experience .experience-block > .Experience-Row:not(:has(+ .Experience-Row)) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
 #Education .Experience-Row {
     border-bottom: none;
     padding-bottom: 0;
