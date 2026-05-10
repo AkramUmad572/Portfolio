@@ -64,7 +64,22 @@ function setupExperienceModal() {
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('experience-modal-open');
 
-    if (closeBtn) closeBtn.focus();
+    const scrollModalToTop = () => {
+      modal.scrollTop = 0;
+      const panel = modal.querySelector('.experience-modal-content');
+      if (panel) panel.scrollIntoView({ block: 'start', behavior: 'auto' });
+    };
+    scrollModalToTop();
+    requestAnimationFrame(scrollModalToTop);
+
+    if (closeBtn && typeof closeBtn.focus === 'function') {
+      try {
+        closeBtn.focus({ preventScroll: true });
+      } catch {
+        closeBtn.focus();
+      }
+    }
+    requestAnimationFrame(scrollModalToTop);
   };
 
   const closeModal = () => {
