@@ -257,34 +257,34 @@ function setupSiteAudioPlayer() {
 
   const SITE_AUDIO_PLAYLIST = [
     {
-      file: 'audio/color-your-night.mp3',
+      file: '/audio/color-your-night.mp3',
       title: 'Color Your Night',
       artist: 'ATLUS Sound Team',
-      cover: 'Images/audio/color-your-night-cover.png',
+      cover: '/Images/audio/color-your-night-cover.png',
     },
     {
-      file: 'audio/beneath-the-mask-rain.mp3',
+      file: '/audio/beneath-the-mask-rain.mp3',
       title: 'Beneath the Mask -rain-',
       artist: 'Lyn, ATLUS Sound Team',
-      cover: 'Images/audio/beneath-the-mask-rain-cover.png',
+      cover: '/Images/audio/beneath-the-mask-rain-cover.png',
     },
     {
-      file: 'audio/tokyo-express.mp3',
+      file: '/audio/tokyo-express.mp3',
       title: 'Tokyo Express',
       artist: 'Yel',
-      cover: 'Images/audio/tokyo-express-cover.png',
+      cover: '/Images/audio/tokyo-express-cover.png',
     },
     {
-      file: 'audio/euphoria-bts.mp3',
+      file: '/audio/euphoria-bts.mp3',
       title: 'Euphoria',
       artist: 'BTS',
-      cover: 'Images/audio/euphoria-cover.png',
+      cover: '/Images/audio/euphoria-cover.png',
     },
     {
-      file: 'audio/moon-afroshyi.mp3',
+      file: '/audio/moon-afroshyi.mp3',
       title: 'Moon',
       artist: 'Afroshyi',
-      cover: 'Images/audio/moon-afroshyi-cover.png',
+      cover: '/Images/audio/moon-afroshyi-cover.png',
     },
   ];
 
