@@ -11,6 +11,9 @@
     <link rel="icon" href="../assets/icons/favicon.svg?v=8" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png?v=8" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..700&display=swap" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/music-style.css" />
     <link rel="stylesheet" href="../css/sakura.css" />
@@ -73,7 +76,7 @@
       </header>
 
       <h1 class="page-title">music</h1>
-      <p style="text-align: center; color: #666; margin-bottom: 30px">
+      <p class="page-subtitle" style="margin-bottom: 30px">
         Album reviews and what I'm currently listening to
       </p>
 
@@ -102,7 +105,7 @@
 
       <!-- Favorite Artists -->
       <section style="margin-bottom: 60px; padding: 0 20px">
-        <h2 style="font-size: 1.3rem; margin-bottom: 24px; text-align: center">
+        <h2 class="subsection-title" style="text-align: center">
           2025 Spotify Wrapped
         </h2>
         <div class="favorite-artists">
@@ -160,10 +163,42 @@
       </section>
 
       <section style="margin-bottom: 60px">
-        <h2 style="font-size: 1.3rem; margin-bottom: 24px">Album Reviews</h2>
+        <h2 class="subsection-title">Album Reviews</h2>
         <div class="albums-grid">
+          <!-- J. Cole - 4 Your Eyez Only Album Card -->
+          <div class="album-card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openAlbumModal('4-your-eyez-only')">
+            <div class="album-cover-container">
+              <img
+                src="../Images/music/4_your_eyez_only.jpg"
+                alt="4 Your Eyez Only album cover"
+                class="album-cover"
+              />
+              <div class="album-rating-badge">9/10</div>
+            </div>
+            <div class="album-info">
+              <h3 class="album-artist">J. Cole</h3>
+              <p class="album-title">4 Your Eyez Only</p>
+            </div>
+          </div>
+
+          <!-- BTS - ARIRANG Album Card -->
+          <div class="album-card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openAlbumModal('arirang')">
+            <div class="album-cover-container">
+              <img
+                src="../Images/music/arirang.jpg"
+                alt="ARIRANG album cover"
+                class="album-cover"
+              />
+              <div class="album-rating-badge">8.5/10</div>
+            </div>
+            <div class="album-info">
+              <h3 class="album-artist">BTS</h3>
+              <p class="album-title">ARIRANG</p>
+            </div>
+          </div>
+
           <!-- ASAP Rocky - Don't Be Dumb Album Card -->
-          <div class="album-card" onclick="openAlbumModal('dont-be-dumb')">
+          <div class="album-card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openAlbumModal('dont-be-dumb')">
             <div class="album-cover-container">
               <img
                 src="../Images/music/dont_be_dum.png"
@@ -179,7 +214,7 @@
           </div>
 
           <!-- PlayBoi Carti - I AM MUSIC Album Card -->
-          <div class="album-card" onclick="openAlbumModal('i-am-music')">
+          <div class="album-card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openAlbumModal('i-am-music')">
             <div class="album-cover-container">
               <img
                 src="../Images/music/I_AM_MUSIC.jpg"
@@ -195,7 +230,7 @@
           </div>
 
           <!-- wave to earth - 0.1 flaws and all Album Card -->
-          <div class="album-card" onclick="openAlbumModal('wave-to-earth')">
+          <div class="album-card" role="button" tabindex="0" aria-haspopup="dialog" onclick="openAlbumModal('wave-to-earth')">
             <div class="album-cover-container">
               <img
                 src="../Images/music/wte.jpg"
@@ -216,6 +251,60 @@
       <div id="album-modal" class="modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
           <button class="modal-close" onclick="closeModal()">&times;</button>
+
+          <!-- J. Cole - 4 Your Eyez Only Modal Content -->
+          <div id="4-your-eyez-only-content" class="album-modal-content">
+            <div class="modal-left">
+              <h2 class="modal-artist">J. Cole</h2>
+              <h3 class="modal-album-title">4 Your Eyez Only</h3>
+              <div class="modal-rating">
+                <span class="rating-number">9</span>
+                <span class="rating-divider">/</span>
+                <span class="rating-total">10</span>
+              </div>
+              <!-- TODO: add review + top 3 tracks, e.g.
+              <p class="modal-description">...</p>
+              <div class="modal-favorite-songs">
+                <h4>Top 3 Tracks:</h4>
+                <ol><li>...</li><li>...</li><li>...</li></ol>
+              </div>
+              -->
+            </div>
+            <div class="modal-right">
+              <img
+                src="../Images/music/4_your_eyez_only.jpg"
+                alt="4 Your Eyez Only album cover"
+                class="modal-album-cover"
+              />
+            </div>
+          </div>
+
+          <!-- BTS - ARIRANG Modal Content -->
+          <div id="arirang-content" class="album-modal-content">
+            <div class="modal-left">
+              <h2 class="modal-artist">BTS</h2>
+              <h3 class="modal-album-title">ARIRANG</h3>
+              <div class="modal-rating">
+                <span class="rating-number">8.5</span>
+                <span class="rating-divider">/</span>
+                <span class="rating-total">10</span>
+              </div>
+              <!-- TODO: add review + top 3 tracks, e.g.
+              <p class="modal-description">...</p>
+              <div class="modal-favorite-songs">
+                <h4>Top 3 Tracks:</h4>
+                <ol><li>...</li><li>...</li><li>...</li></ol>
+              </div>
+              -->
+            </div>
+            <div class="modal-right">
+              <img
+                src="../Images/music/arirang.jpg"
+                alt="ARIRANG album cover"
+                class="modal-album-cover"
+              />
+            </div>
+          </div>
 
           <!-- Don't Be Dumb Modal Content -->
           <div id="dont-be-dumb-content" class="album-modal-content">
@@ -431,7 +520,7 @@
 
           // Reset navigation to "Back to Home"
           backNav.textContent = "← Back to Home";
-          backNav.href = "index.html";
+          backNav.href = "../index.html";
           backNav.onclick = null;
 
           modal.style.display = "none";

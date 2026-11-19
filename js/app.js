@@ -5,6 +5,48 @@ function copyemail() {
   setTimeout(() => (c.style.opacity = "0"), 1000);
 }
 
+// Album / book cards that open a modal: keyboard activation + focus handoff.
+// Cards opt in with role="button"; non-interactive cards (watching) are untouched.
+(function () {
+  let lastCard = null;
+
+  function visibleModal() {
+    return Array.from(document.querySelectorAll(".modal")).find(
+      (m) => m.style.display === "flex"
+    );
+  }
+
+  document.addEventListener("click", (e) => {
+    const card = e.target.closest('.album-card[role="button"]');
+    if (!card) return;
+    lastCard = card;
+    requestAnimationFrame(() => {
+      const modal = visibleModal();
+      const close = modal && modal.querySelector(".modal-close");
+      if (close) close.focus();
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    const card = e.target.closest && e.target.closest('.album-card[role="button"]');
+    if (!card || (e.key !== "Enter" && e.key !== " ")) return;
+    e.preventDefault();
+    card.click();
+  });
+
+  // Return focus to the card that opened the modal once it closes.
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".modal").forEach((modal) => {
+      new MutationObserver(() => {
+        if (modal.style.display === "none" && lastCard) {
+          lastCard.focus();
+          lastCard = null;
+        }
+      }).observe(modal, { attributes: true, attributeFilter: ["style"] });
+    });
+  });
+})();
+
 function switchTab(tabName, element) {
   // Hide all tab contents
   const tabContents = document.querySelectorAll(".tab-content");

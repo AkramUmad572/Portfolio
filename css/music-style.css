@@ -16,10 +16,11 @@
 }
 
 .page-title {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
+    line-height: 1.15;
     font-weight: 400;
     font-style: italic;
-    font-family: Georgia, serif;
+    font-family: var(--font-display);
     margin: 0 0 12px 0;
     text-align: center;
     text-transform: lowercase;
@@ -33,12 +34,28 @@
 }
 
 .album-card {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    border-radius: 10px;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.album-card:hover {
+/* Only cards that open something look and act clickable */
+.album-card[role="button"] {
+    cursor: pointer;
+}
+
+.album-card[role="button"]:hover {
     transform: translateY(-8px);
+}
+
+.album-card[role="button"]:focus-visible {
+    outline: 2px solid rgba(178, 82, 118, 0.75);
+    outline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .album-card[role="button"]:hover {
+        transform: none;
+    }
 }
 
 .album-cover-container {

@@ -11,6 +11,9 @@
       <link rel="icon" href="../assets/icons/favicon.svg?v=8" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png?v=8" />
 
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..700&display=swap" />
       <link rel="stylesheet" href="../css/style.css" />
       <link rel="stylesheet" href="../css/projects.css" />
       <link rel="stylesheet" href="../css/sakura.css" />
@@ -44,11 +47,21 @@
         </header>
 
         <h1 class="page-title">personal blog</h1>
-        <p style="text-align: center; color: #666; margin-bottom: 60px;">
+        <p class="page-subtitle" style="margin-bottom: 60px">
           Thoughts on tech, life, and everything in between
         </p>
 
         <div class="blog-posts-container">
+          <!-- Empty state: delete this block when the first post goes in. -->
+          <div class="blog-empty">
+            <p class="blog-empty-title">nothing posted yet</p>
+            <p class="blog-empty-text">
+              The first few posts are still drafts. In the meantime, the
+              projects are where most of my thinking ends up.
+            </p>
+            <a href="projects.html" class="blog-empty-link">See the projects →</a>
+          </div>
+
           <!-- Blog posts will be added here manually -->
           <!-- To add a new post, use this format:
           

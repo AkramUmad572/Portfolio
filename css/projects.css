@@ -15,10 +15,11 @@
 }
 
 .page-title {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
+    line-height: 1.15;
     font-weight: 400;
     font-style: italic;
-    font-family: Georgia, serif;
+    font-family: var(--font-display);
     margin: 0 0 40px 0;
     text-transform: lowercase;
 }

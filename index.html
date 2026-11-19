@@ -11,6 +11,9 @@
     <link rel="icon" href="assets/icons/favicon.svg?v=8" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=8" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..700;1,400..700&display=swap" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/sakura.css" />
     <script src="js/app.js" defer></script>
@@ -164,7 +167,7 @@
         />
         <div class="hero-content">
           <div class="profile-section">
-            <img class="pfp" src="Images/misc/nerd_cat.jpg" alt="Profile" />
+            <img class="pfp" src="Images/misc/homepage_pfp.jpg" alt="Umad Akram" />
             <div class="profile-info">
               <h1>Umad Akram</h1>
               <p class="intro">
@@ -194,13 +197,13 @@
             >
               <div class="company-logo-container">
                 <img
-                  class="company-logo"
+                  class="company-logo company-logo--tight"
                   src="Images/experience/shopify.png"
                   alt="Shopify logo"
                 />
               </div>
               <div class="Experience-content">
-                <p class="Experience-date">May 2026 - Present</p>
+                <p class="Experience-date">May 2026 - Aug 2026</p>
                 <h3 class="Experience-title">Shopify</h3>
                 <p class="Experience-role">Software Engineering Intern</p>
                 <p class="Experience-description">
@@ -305,7 +308,7 @@
                   </p>
                   <div class="experience-modal-meta">
                     <span class="experience-modal-meta-item"
-                      >May 2026 – Present</span
+                      >May 2026 – Aug 2026</span
                     >
                   </div>
                 </div>
@@ -566,7 +569,7 @@ reducing environment setup time from 5 days to under 30 minutes.
                 />
               </div>
               <div class="Experience-content">
-                <p class="Experience-date">2023 - 2027</p>
+                <p class="Experience-date">2023 - Present</p>
                 <h3 class="Experience-title">Ontario Tech University</h3>
                 <p class="Experience-role">
                   Bachelor of Science - Computer Science
@@ -638,6 +641,80 @@ reducing environment setup time from 5 days to under 30 minutes.
           <div class="project-card">
             <img
               class="project-image"
+              src="Images/projects/perception_gallery.png"
+              alt="Perception project"
+            />
+            <div class="project-info">
+              <h3 class="project-title">Perception - HTN 2026</h3>
+              <p class="project-description">
+                A voice-driven CAD tool in passthrough AR on the Meta Quest 3 that
+                turns spoken ideas into real parametric 3D models you can grab,
+                measure, and resize by hand, then export as printable STL/STEP
+                files.
+              </p>
+              <div class="project-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Three.js</span>
+                <span class="tech-tag">WebXR</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">CadQuery</span>
+                <span class="tech-tag">Gemini API</span>
+                <span class="tech-tag">ElevenLabs</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/AkramUmad572/Perception_HTN_2026"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                    />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                  </svg>
+                  Source
+                </a>
+                <a
+                  href="https://devpost.com/software/perception-fha214"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    />
+                  </svg>
+                  DevPost
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              class="project-image"
               src="Images/projects/tradeguard_gallery.jpg"
               alt="TradeGuard project"
             />
@@ -706,56 +783,6 @@ reducing environment setup time from 5 days to under 30 minutes.
               </div>
             </div>
           </div>
-          <div class="project-card">
-            <img
-              class="project-image"
-              src="Images/projects/DocFlow_Gallery.png"
-              alt="DocFlow project"
-            />
-            <div class="project-info">
-              <h3 class="project-title">
-                DocFlow - HTN 2025 (YC & Warp finalist)
-              </h3>
-              <p class="project-description">
-                An automated documentation platform that tracks PRs, commits,
-                and JIRA activity to generate changelogs and update
-                documentation in real time.
-              </p>
-              <div class="project-tags">
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">DynamoDB</span>
-                <span class="tech-tag">GitHub Webhooks</span>
-                <span class="tech-tag">Gemini API</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://devpost.com/software/docflow-2qinhd#updates"
-                  target="_blank"
-                  class="project-link"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path
-                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                    />
-                  </svg>
-                  DevPost
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="view-all-projects">
           <a href="pages/projects.html" class="view-all-link">
@@ -780,10 +807,7 @@ reducing environment setup time from 5 days to under 30 minutes.
       <section id="PersonalInterests">
         <h2 class="section-title">personal interests</h2>
         <div class="interests-grid">
-          <div
-            class="interest-card"
-            onclick="window.location.href = 'pages/music.html'"
-          >
+          <a class="interest-card" href="pages/music.html">
             <div class="interest-icon spotify-icon-container">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -801,12 +825,9 @@ reducing environment setup time from 5 days to under 30 minutes.
             <p class="interest-description">
               Album reviews and what I'm currently listening to
             </p>
-          </div>
+          </a>
 
-          <div
-            class="interest-card"
-            onclick="window.location.href = 'pages/watching.html'"
-          >
+          <a class="interest-card" href="pages/watching.html">
             <div class="interest-icon anilist-icon-container">
               <img
                 src="Images/interests/AniList_logo.svg.png"
@@ -818,12 +839,9 @@ reducing environment setup time from 5 days to under 30 minutes.
             <p class="interest-description">
               Shows and movies I'm currently watching
             </p>
-          </div>
+          </a>
 
-          <div
-            class="interest-card"
-            onclick="window.location.href = 'pages/reading.html'"
-          >
+          <a class="interest-card" href="pages/reading.html">
             <div class="interest-icon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -846,11 +864,12 @@ reducing environment setup time from 5 days to under 30 minutes.
             <p class="interest-description">
               Books I'm reading and my personal book reviews
             </p>
-          </div>
+          </a>
         </div>
       </section>
 
-      <section id="PersonalBlog">
+      <!-- Hidden until the first post exists: remove `hidden` once pages/blog.html has a post. -->
+      <section id="PersonalBlog" hidden>
         <div class="blog-container">
           <div class="blog-content">
             <h2 class="blog-title">personal blog</h2>
