@@ -15,8 +15,8 @@
 
   const SEED = 0x5a4b17;
   // Earlier baseline: desktop 70, narrow 36.
-  const COUNT_DESKTOP = 90;
-  const COUNT_NARROW = 46;
+  const COUNT_DESKTOP = 75;
+  const COUNT_NARROW = 39;
 
   // Small deterministic PRNG (mulberry32): same sequence on every page load.
   function makeRandom(seed) {
